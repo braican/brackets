@@ -1,0 +1,267 @@
+<html>
+<head>
+	<title>Bracket</title>
+</head>
+
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.7.1/jquery.min.js"></script>
+<script>
+$(document).ready(function(){
+	$("section div p").click(function(){
+		var clicked = $(this).html();
+		var round = $(this).parent().attr("title");
+		$("." + round).html(clicked);
+	});
+});
+
+
+
+</script>
+
+<style type="text/css">
+
+body{
+	position:absolute;
+}
+
+.side{
+	float:left;
+	position:relative;
+	text-align:left;
+	font-size:10px;
+	font-family:sans-serif;
+	text-transform:uppercase;
+}
+
+article section {
+	width:126px;
+	float:left;
+	display:inline;
+}
+
+article section div { position:relative; }
+
+.left section div {
+	border-right:1px solid black;
+	text-align:right;
+}
+.right section div {
+	border-left:1px solid black;
+	text-align:left;
+}
+
+article section div p {
+	padding:5px;
+	margin:0;
+	background-color:#ddd;
+	height:13px;
+	cursor:pointer;
+}
+
+.rd1 div p:nth-child(2n){ margin-top:5px; }
+.rd1 div:nth-child(n + 2){ margin-top:20px; }
+
+.rd2{ margin-top:14px; }
+.rd2 div:nth-child(n + 2){ margin-top:47px;}
+.rd2 div p:nth-child(2n){ margin-top:47px; }
+
+.rd3{ margin-top:48px; }
+.rd3 div:nth-child(n + 2){ margin-top:116px;}
+.rd3 div p:nth-child(2n){ margin-top:116px; }
+
+.rd3{ margin-top:55px; }
+.rd3 div:nth-child(n + 2){ margin-top:120px;}
+.rd3 div p:nth-child(2n){ margin-top:120px; }
+
+.rd4{ margin-top:115px; }
+.rd4 div:nth-child(n + 2){ margin-top:272px;}
+.rd4 div p:nth-child(2n){ margin-top:272px; }
+
+.rd5{ margin-top:278px; }
+.rd5 div:nth-child(n + 2){ margin-top:256px;}
+.rd5 div p:nth-child(2n){ margin-top:256px; }
+
+.winner{
+	float:left;
+	text-align:center;
+	font-size:10px;
+	font-family:sans-serif;
+	text-transform:uppercase;
+}
+.winner strong{
+	font-size:12px;
+	background-color:#ddd;
+	padding:7px 15px;
+	display:block;
+}
+</style>
+
+<body>
+
+<article class="left side">
+	<section class="rd1">
+		<div title="r1s1">
+			<p>Boston Red Sox</p>
+			<p>Indiana Pacers</p>
+		</div>
+		<div title="r1s2">
+			<p>Detroit Lions</p>
+			<p>Phoenix Coyotes</p>
+		</div>
+		<div title="r1s3">
+			<p>Buffalo Bills</p>
+			<p>Dallas Stars</p>
+		</div>
+		<div title="r1s4">
+			<p>Boston Celtics</p>
+			<p>Minn. T'Wolves</p>
+		</div>
+		<div title="r1s5">
+			<p>Cin. Bengals</p>
+			<p>BC Eagles</p>
+		</div>
+		<div title="r1s6">
+			<p>Tennessee Titans</p>
+			<p>NE Revolution</p>
+		</div>
+		<div title="r1s7">
+			<p>San Diego Padres</p>
+			<p>San Jose Sharks</p>
+		</div>
+		<div title="r1s8">
+			<p>Seattle S'Sonics</p>
+			<p>M Wolverines</p>
+		</div>
+	</section>
+
+	<section class="rd2">
+		<div title="r2s1">
+			<p class="r1s1"></p>
+			<p class="r1s2"></p>
+		</div>
+		<div title="r2s2">
+			<p class="r1s3"></p>
+			<p class="r1s4"></p>
+		</div>
+		<div title="r2s3">
+			<p class="r1s5"></p>
+			<p class="r1s6"></p>
+		</div>
+		<div title="r2s4">
+			<p class="r1s7"></p>
+			<p class="r1s8"></p>
+		</div>
+	</section>
+	
+	<section class="rd3">
+		<div title="r3s1">
+			<p class="r2s1"></p>
+			<p class="r2s2"></p>
+		</div>
+		<div title="r3s2">
+			<p class="r2s3"></p>
+			<p class="r2s4"></p>
+		</div>
+	</section>
+	
+	<section class="rd4">
+		<div title="semi1">
+			<p class="r3s1"></p>
+			<p class="r3s2"></p>
+		</div>
+	</section>
+	
+	<section class="rd5">
+		<div title="final">
+			<p class="semi1"></p>
+		</div>
+	</section>
+</article>
+
+<div class="winner">
+	<p>winner</p>
+	<p><strong class="final"></strong></p>
+</div>
+
+<article class="right side">
+	<section class="rd5">
+		<div title="final">
+			<p class="semi2"></p>
+		</div>
+	</section>
+	
+	<section class="rd4">
+		<div title="semi2">
+			<p class="r3s3"></p>
+			<p class="r3s4"></p>
+		</div>
+	</section>
+	
+	<section class="rd3">
+		<div title="r3s3">
+			<p class="r2s5"></p>
+			<p class="r2s6"></p>
+		</div>
+		<div title="r3s4">
+			<p class="r2s7"></p>
+			<p class="r2s8"></p>
+		</div>
+	</section>
+	
+	<section class="rd2">
+		<div title="r2s5">
+			<p class="r1s9"></p>
+			<p class="r1s10"></p>
+		</div>
+		<div title="r2s6">
+			<p class="r1s11"></p>
+			<p class="r1s12"></p>
+		</div>
+		<div title="r2s7">
+			<p class="r1s13"></p>
+			<p class="r1s14"></p>
+		</div>
+		<div title="r2s8">
+			<p class="r1s15"></p>
+			<p class="r1s16"></p>
+		</div>
+	</section>
+	
+	<section class="rd1">
+		<div title="r1s9">
+			<p>NE Patriots</p>
+			<p>Carolina Panthers</p>
+		</div>
+		<div title="r1s10">
+			<p>Miami Hurricanes</p>
+			<p>NU Huskies</p>
+		</div>
+		<div title="r1s11">
+			<p>Richmond Spiders</p>
+			<p>Chicago Cubs</p>
+		</div>
+		<div title="r1s12">
+			<p>Montana Grizzlies</p>
+			<p>Portland T'Blazers</p>
+		</div>
+		<div title="r1s13">
+			<p>Portland Sea Dogs</p>
+			<p>Kansas Jayhawks</p>
+		</div>
+		<div title="r1s14">
+			<p>Texas Rangers</p>
+			<p>Detroit Red Wings</p>
+		</div>
+		<div title="r1s15">
+			<p>Boston Bruins</p>
+			<p>Cle. Cavaliers</p>
+		</div>
+		<div title="r1s16">
+			<p>Denver Nuggets</p>
+			<p>Colorado Rockies</p>
+		</div>
+	</section>
+</article>
+
+
+</body>
+</html>
